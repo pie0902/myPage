@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <title>Thunder</title>
+    <script type="module">
+      import { change } from "./js/lang.js";
+      let i = 0;
+      const sectionDiv = document.querySelector(".section");
+      const sectionDivKo = document.querySelector(".section-ko");
+      sectionDivKo.style.display = "none";
+      function toggleClass() {
+        const ht = document.querySelector(".homeTitle");
+        i++;
+        if (i % 2 == 0) {
+          sectionDiv.style.display = "grid";
+          sectionDivKo.style.display = "none";
+          ht.textContent = "JI's Portfolio"; // 짝수일 때 영어 텍스트
+        } else {
+          sectionDiv.style.display = "none";
+          sectionDivKo.style.display = "grid";
+          ht.textContent = "윤종일의 포트폴리오"; // 홀수일 때 한국어 텍스트
+        }
+      }
+      function setupLanguageToggle() {
+        const langBtn = document.querySelector(".langBtn");
+        langBtn.addEventListener("click", () => {
+          change.toggleLanguage();
+          toggleClass();
+        });
+      }
+      window.addEventListener("DOMContentLoaded", setupLanguageToggle);
+    </script>
+  </head>
+  <body>
+    <div class="sideMenu" id="sideMenu">
+      <span class="closeMenuBtn" onclick="toggleMenu()"><h1>x</h1></span>
+      <ul>
+        <li>
+          <a href="https://github.com/pie0902" target="_blank"
+            >github:https://github.com/pie0902</a
+          >
+        </li>
+        <li>
+          <a href="https://thunderbyte.hashnode.dev/" target="_blank"
+            >blog:https://thunderbyte.hashnode.dev/</a
+          >
+        </li>
+        <li>e-mail:jiyun4971@naver.com</li>
+      </ul>
+    </div>
+
+    <header class="header">
+      <div class="topBox">
+        <div class="menuBtn" onclick="toggleMenu()">*Contact*</div>
+        <div
+          style="
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 5px;
+          "
+        >
+          <p class="langInfo">Language</p>
+          <div class="langBtn">
+            <span>E</span>
+            <div class="roundBtn"></div>
+            <span>K</span>
+          </div>
+        </div>
+      </div>
+      <h1 class="homeTitle">JI's Portfolio</h1>
+    </header>
+    <div class="section">
+      <div class="card-container">
+        <h2 class="card-title">bucheon</h2>
+        <a href="https://thunder0902.github.io/bucheon/" target="_blank">
+          <div class="cardBox1">
+            <div class="card">
+              <div class="card-front">
+                <img src="./img/bucheon.png" alt="bucheon" />
+              </div>
+              <div class="card-back">
+                <h1>Project: Bucheon City Website</h1>
+                <p class="card-type">[Project Type: Individual Project]</p>
+                <ul>
+                  <li>
+                    <span class="back-board-list-title">Duration:</span> 1
+                    months
+                  </li>
+                  <li>
+                    <span class="back-board-list-title">Role:</span> Web
+                    Publishing
+                  </li>
+                  <li>
+                    <span class="back-board-list-title">SKILL:</span> HTML5,
+                    CSS3, JavaScript
+                  </li>
+                  <li>
+                    <span class="back-board-list-title">Tools:</span> Photoshop,
+                    Visual Studio Code
+                  </li>
+                  <li>
+                    <span class="back-board-list-title">Outcome:</span> Fully
+                    responsive, cross-browser compatible website
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </a>
+      </div>
+      <div class="card-container">
+        <h2 class="card-title">CREWW</h2>
+        <a href="https://creww.duckdns.org/" target="_blank">
+          <div class="cardBox1">
+            <div class="card">
+              <div class="card-front">
+                <img src="./img/creww.png" alt="creww" />
+              </div>
+              <div class="card-back">
+                <h1>Project: CREWW</h1>
+                <p class="card-type">[Project Type: Individual Project]</p>
+                <ul>
+                  <li>
+                    <span class="back-board-list-title">Duration:</span> 2
+                    months
+                  </li>
+                  <li>
+                    <span class="back-board-list-title">Role:</span> Fullstack
+                    Developer
+                  </li>
+                  <li>
+                    <span class="back-board-list-title">Skill:</span> Java,
+                    Spring Boot, Spring MVC, JWT, Swagger, JPA, React, MySQL
+                  </li>
+                  <li>
+                    <span class="back-board-list-title">DevOps:</span> Docker,
+                    Docker Hub, Nginx, OpenMediaVault, Debian
+                  </li>
+                  <li>
+                    <span class="back-board-list-title">Testing:</span> JUnit,
+                    Jacoco, Codecov
+                  </li>
+                  <li>
+                    <span class="back-board-list-title">Outcome:</span> Fully
+                    functional bulletin board website with cost-effective server
+                    hosting.
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </a>
+      </div>
+      <div class="card-container">
+        <h2 class="card-title">10-trillion-dollars</h2>
+        <a
+          href="https://github.com/10-trillion-dollars/10-trillion-dollars"
+          target="_blank"
+        >
+          <div class="cardBox1">
+            <div class="card">
+              <div class="card-front">
+                <img src="./img/10.png" alt="10-trillion-dollars" />
+              </div>
+              <div class="card-back">
+                <h1>Project: 10-trillion-dollars</h1>
+                <p class="card-type">
+                  [Project Type: Team Project (5 members)]
+                </p>
+                <ul>
+                  <li>
+                    <span class="back-board-list-title">Duration:</span> 2
+                    months
+                  </li>
+                  <li>
+                    <span class="back-board-list-title">Role:</span> Fullstack
+                    Developer
+                  </li>
+                  <li>
+                    <span class="back-board-list-title">Skill:</span> Java,
+                    Spring, Spring Boot, Spring Security, Spring Cloud,
+                    Hibernate, MySQL, Redis, HTML5, CSS3, JavaScript
+                  </li>
+                  <li>
+                    <span class="back-board-list-title">DevOps:</span> Docker,
+                    GitHub Actions, AWS EC2, ECS, ECR, Fargate, S3, RDS,
+                    ElastiCache, Route 53, Elastic Load Balancing
+                  </li>
+                  <li>
+                    <span class="back-board-list-title"
+                      >Monitoring & Logging:</span
+                    >
+                    Elasticsearch, Logstash, Kibana (ELK Stack)
+                  </li>
+
+                  <li>
+                    <span class="back-board-list-title">Outcome:</span> Fully
+                    functional eCommerce platform with a comprehensive order
+                    management page considering payments and concurrency.
+                  </li>
+                  <li>
+                    <em
+                      >*Note: Deployment is paused due to cost considerations.
+                      Click to view the GitHub repository.*</em
+                    >
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </a>
+      </div>
+      <div class="card-container">
+        <h2 class="card-title">dog shop</h2>
+        <a href="https://thunder0902.github.io/dogshop/" target="_blank">
+          <div class="cardBox1">
+            <div class="card">
+              <div class="card-front">
+                <img src="./img/dog.png" alt="dog" />
+              </div>
+              <div class="card-back">
+                <h1>Project: dogshop</h1>
+                <p class="card-type">[Project Type: Individual Project]</p>
+                <ul>
+                  <li>
+                    <span class="back-board-list-title">Duration:</span> 1
+                    months
+                  </li>
+                  <li>
+                    <span class="back-board-list-title">Role:</span> frontend
+                    developer
+                  </li>
+                  <li>
+                    <span class="back-board-list-title">Skill:</span>
+                    html5,css3,javascript,react
+                  </li>
+                  <li>
+                    <span class="back-board-list-title">Outcome:</span> Frontend
+                    web page implemented using React
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <!-- ================한글==================== -->
+    <div class="section-ko">
+      <div class="card-container">
+        <h2 class="card-title">부천 시청 홈페이지</h2>
+        <a href="https://thunder0902.github.io/bucheon/" target="_blank">
+          <div class="cardBox1">
+            <div class="card">
+              <div class="card-front">
+                <img src="./img/bucheon.png" alt="bucheon" />
+              </div>
+              <div class="card-back">
+                <h1>Project: 부천 시청 홈페이지</h1>
+                <p class="card-type">[Project Type: 개인]</p>
+                <ul>
+                  <li>
+                    <span class="back-board-list-title">소요 시간:</span> 1달
+                  </li>
+                  <li>
+                    <span class="back-board-list-title">Role:</span> Web
+                    Publishing
+                  </li>
+                  <li>
+                    <span class="back-board-list-title">SKILL:</span> HTML5,
+                    CSS3, JavaScript
+                  </li>
+                  <li>
+                    <span class="back-board-list-title">Tools:</span> Photoshop,
+                    Visual Studio Code
+                  </li>
+                  <li>
+                    <span class="back-board-list-title">Outcome:</span> 웹 표준
+                    준수 홈페이지
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </a>
+      </div>
+      <div class="card-container">
+        <h2 class="card-title">CREWW 게시판 서비스</h2>
+        <a href="https://creww.duckdns.org/" target="_blank">
+          <div class="cardBox1">
+            <div class="card">
+              <div class="card-front">
+                <img src="./img/creww.png" alt="creww" />
+              </div>
+              <div class="card-back">
+                <h1>Project: CREWW</h1>
+                <p class="card-type">[Project Type: 개인]</p>
+                <ul>
+                  <li>
+                    <span class="back-board-list-title">소요 시간:</span> 2달
+                  </li>
+                  <li>
+                    <span class="back-board-list-title">Role:</span> Fullstack
+                    Developer
+                  </li>
+                  <li>
+                    <span class="back-board-list-title">Skill:</span> Java,
+                    Spring Boot, Spring MVC, JWT, Swagger, JPA, React, MySQL
+                  </li>
+                  <li>
+                    <span class="back-board-list-title">DevOps:</span> Docker,
+                    Docker Hub, Nginx, OpenMediaVault, Debian
+                  </li>
+                  <li>
+                    <span class="back-board-list-title">Testing:</span> JUnit,
+                    Jacoco, Codecov
+                  </li>
+                  <li>
+                    <span class="back-board-list-title">Outcome:</span> 저렴한
+                    호스트 비용이 장점인 초대식 게시판 웹 사이트
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </a>
+      </div>
+      <div class="card-container">
+        <h2 class="card-title">10조 달러</h2>
+        <a
+          href="https://github.com/10-trillion-dollars/10-trillion-dollars"
+          target="_blank"
+        >
+          <div class="cardBox1">
+            <div class="card">
+              <div class="card-front">
+                <img src="./img/10.png" alt="10-trillion-dollars" />
+              </div>
+              <div class="card-back">
+                <h1>Project: 10-trillion-dollars</h1>
+                <p class="card-type">[Project Type: 팀 (5명)]</p>
+                <ul>
+                  <li>
+                    <span class="back-board-list-title">소요 시간:</span> 2달
+                  </li>
+                  <li>
+                    <span class="back-board-list-title">Role:</span> Fullstack
+                    Developer
+                  </li>
+                  <li>
+                    <span class="back-board-list-title">Skill:</span> Java,
+                    Spring, Spring Boot, Spring Security, Spring Cloud,
+                    Hibernate, MySQL, Redis, HTML5, CSS3, JavaScript
+                  </li>
+                  <li>
+                    <span class="back-board-list-title">DevOps:</span> Docker,
+                    GitHub Actions, AWS EC2, ECS, ECR, Fargate, S3, RDS,
+                    ElastiCache, Route 53, Elastic Load Balancing
+                  </li>
+                  <li>
+                    <span class="back-board-list-title"
+                      >Monitoring & Logging:</span
+                    >
+                    Elasticsearch, Logstash, Kibana (ELK Stack)
+                  </li>
+
+                  <li>
+                    <span class="back-board-list-title">Outcome:</span>
+                    마이크로서비스 아키텍처(MSA)로 구축된, 동시성 처리에
+                    최적화된 주문 시스템을 갖춘 혁신적인 쇼핑몰 웹 페이지
+                  </li>
+                  <li>
+                    <em
+                      >*Note: 비용 문제로 인해 배포가 중지되었습니다. 클릭하시면
+                      GitHub README로 이동합니다.*</em
+                    >
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </a>
+      </div>
+      <div class="card-container">
+        <h2 class="card-title">강아지야</h2>
+        <a href="https://thunder0902.github.io/dogshop/" target="_blank">
+          <div class="cardBox1">
+            <div class="card">
+              <div class="card-front">
+                <img src="./img/dog.png" alt="dog" />
+              </div>
+              <div class="card-back">
+                <h1>Project: dogshop</h1>
+                <p class="card-type">[Project Type: 개인]</p>
+                <ul>
+                  <li>
+                    <span class="back-board-list-title">Duration:</span> 1달
+                  </li>
+                  <li>
+                    <span class="back-board-list-title">Role:</span> frontend
+                    developer
+                  </li>
+                  <li>
+                    <span class="back-board-list-title">Skill:</span>
+                    html5,css3,javascript,react
+                  </li>
+                  <li>
+                    <span class="back-board-list-title">Outcome:</span> 리액트를
+                    학습하며 리덕스 툴 킷을 적용해서 제작한 웹 페이지
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+    <!-- ====================================================================== -->
+    <footer></footer>
+    <script>
+      function toggleMenu() {
+        const sideMenu = document.getElementById("sideMenu");
+        sideMenu.classList.toggle("show");
+      }
+    </script>
+  </body>
+</html>

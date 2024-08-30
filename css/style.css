@@ -1,0 +1,311 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "YEEZY TSTAR", sans-serif;
+  list-style: none;
+  text-decoration: none;
+}
+body {
+  background-image: url(../img/bg.jpeg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  width: 100%;
+}
+/* 글씨 색상 변경 모음 */
+.homeTitle {
+  color: white;
+}
+.menuBtn {
+  color: white;
+}
+.langInfo {
+  color: white;
+}
+.card-title {
+  color: white;
+}
+/* 번역 버튼 디자인 */
+.langBtn {
+  width: 50px; /* 버튼이 조금 더 길어지도록 조정 */
+  height: 30px;
+  background-color: rgb(208, 208, 208);
+  border-radius: 15px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* "E"와 "K"를 양 끝에 배치 */
+  padding: 0 5px;
+}
+
+.roundBtn {
+  width: 24px;
+  height: 24px;
+  background-color: #707070;
+  border-radius: 50%; /* 동그랗게 만듦 */
+  position: absolute;
+  top: 3px; /* 부모 컨테이너 내부에서 세로 정렬 */
+  left: 5px; /* 초기 위치는 왼쪽 (K 쪽) */
+  transition: transform 0.3s ease; /* 위치 전환 애니메이션 */
+}
+
+.langBtn span {
+  font-size: 14px;
+  color: black;
+  padding: 8px;
+}
+
+.langBtn.active .roundBtn {
+  transform: translateX(30px); /* 버튼이 활성화되면 오른쪽으로 이동 */
+}
+/* ========================================================== */
+
+header {
+  padding: 2vw 0;
+}
+
+.header h1 {
+  text-align: center; /* 텍스트를 가운데 정렬 */
+}
+.topBox {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 10vw;
+  align-items: center;
+}
+.section {
+  display: grid;
+  /* grid-template-columns: repeat(3, 1fr); */
+  grid-template-columns: repeat(3, minmax(200px, 1fr));
+  gap: 10px;
+  justify-content: space-around;
+  justify-items: center;
+  padding: 5vw;
+}
+.section-ko {
+  display: grid;
+  /* grid-template-columns: repeat(3, 1fr); */
+  grid-template-columns: repeat(3, minmax(200px, 1fr));
+  gap: 10px;
+  justify-content: space-around;
+  justify-items: center;
+  padding: 5vw;
+}
+
+.card-container {
+  text-align: center; /* 제목을 카드 중앙에 정렬 */
+  width: 100%;
+  max-width: 400px;
+  margin-bottom: 40px;
+}
+.card-container a {
+  width: 100%;
+  height: 100%;
+}
+.card-title {
+  margin-bottom: 10px; /* 카드와 제목 사이의 간격 */
+  font-size: 1.5rem; /* 제목 크기 */
+}
+
+.cardBox1 img {
+  object-fit: scale-down;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+}
+
+/* 테스트 */
+.cardBox1 {
+  perspective: 1000px; /* 3D 회전 효과를 위한 관점 설정 */
+  border-radius: 15px;
+  aspect-ratio: 1 / 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden; /* 카드의 내용이 넘치지 않도록 설정 */
+}
+
+.card {
+  box-shadow: 2px 4px 12px #00000014;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.8s ease-in-out;
+  transform-origin: center; /* 중심을 축으로 회전 */
+  border-radius: 15px;
+}
+.card-type {
+  padding: 5px 10px;
+  color: #707070;
+}
+.card-front,
+.card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+  backface-visibility: hidden;
+  transition: opacity 0.8s ease-in-out; /* 부드러운 페이드 전환 */
+}
+
+.card-front {
+  /* background-color: rgb(239, 239, 239); */
+  /* background-color: #3d3531; */
+  background-color: #e3e3e3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 1; /* 기본 상태에서 완전히 보임 */
+}
+
+/* 카드 뒷면 */
+.card-back {
+  box-sizing: border-box;
+  background-color: #333;
+  color: #f0f0f0;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+  opacity: 0; /* 기본 상태에서 숨김 */
+  max-height: 100%; /* 카드의 최대 높이를 설정 */
+  overflow-y: auto; /* 내용이 넘칠 경우 세로 스크롤 활성화 */
+}
+
+.cardBox1:hover .card-front {
+  opacity: 0; /* 앞면을 서서히 숨김 */
+}
+
+.cardBox1:hover .card-back {
+  opacity: 1; /* 뒷면을 서서히 나타냄 */
+}
+ㄴ .card-back h3 {
+  text-align: center;
+  margin-bottom: 10px; /* 제목과 리스트 간의 간격을 더 넓게 */
+  font-size: 1.2rem; /* 제목 크기 조금 키움 */
+  font-weight: bold; /* 강조된 글꼴로 가독성 향상 */
+}
+
+.card-back ul {
+  text-align: left;
+  list-style: none; /* 리스트 아이템의 기본 불릿 제거 */
+  padding: 10px;
+  margin-top: 15px;
+  max-height: calc(100% - 40px); /* ul의 최대 높이를 카드 높이와 조정 */
+  overflow-y: auto; /* ul 내용이 넘칠 경우 세로 스크롤 활성화 */
+}
+
+.card-back ul li {
+  color: rgb(194, 194, 194);
+  font-size: clamp(0.9rem, 2vw, 1.1rem); /* 텍스트 크기 약간 증가 */
+  padding: 8px 0; /* 리스트 아이템 사이 간격 증가 */
+  line-height: 1.5; /* 줄 간격을 늘려 가독성 향상 */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2); /* 아이템 구분선 추가 */
+}
+.back-board-list-title {
+  font-weight: bold; /* 텍스트를 굵게 */
+  color: #f0f0f0; /* 텍스트 색상을 배경과 대비되게 설정 */
+  margin-right: 5px; /* 제목과 내용 사이의 간격 */
+}
+
+/* 사이드 메뉴 디자인 */
+.sideMenu {
+  font-size: clamp(0.9rem, 2vw, 1.1rem); /* 텍스트 크기 약간 증가 */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 40%;
+  height: 100%;
+  background-color: #333;
+  color: white;
+  transform: translateX(-100%); /* 초기 상태에서는 화면 밖에 숨김 */
+  transition: transform 0.5s ease; /* 애니메이션 효과 */
+  clip-path: polygon(0 0, 100% 0, 0% 40%); /* 삼각형 모양 만들기 */
+  z-index: 1;
+  opacity: 0.9;
+}
+
+.sideMenu.show {
+  transform: translateX(0); /* 메뉴를 화면에 나타냄 */
+}
+
+.sideMenuHome,
+.closeMenuBtn {
+  display: block;
+  padding: 20px;
+  cursor: pointer;
+}
+
+.sideMenu ul {
+  list-style-type: none;
+  padding: 20px;
+}
+
+.sideMenu ul li {
+  margin: 10px 0;
+}
+
+.sideMenu ul li a {
+  color: white;
+  text-decoration: none;
+}
+
+/* 반응형 */
+@media screen and (max-width: 800px) {
+  body {
+    width: 100%;
+    height: 100%;
+  }
+  .topBox {
+    padding: 10px;
+  }
+
+  .section {
+    display: grid;
+    /* grid-template-columns: repeat(3, 1fr); */
+    grid-template-columns: repeat(1, minmax(200px, 1fr));
+    gap: 5px;
+    justify-content: space-around;
+    justify-items: center;
+    padding: 5vw;
+  }
+  .section-ko {
+    display: grid;
+    /* grid-template-columns: repeat(3, 1fr); */
+    grid-template-columns: repeat(2, minmax(200px, 1fr));
+    gap: 10px;
+    justify-content: space-around;
+    justify-items: center;
+    padding: 2vw;
+  }
+  .sideMenu {
+    width: 100%; /* 사이드 메뉴가 화면 너비 전체를 차지하도록 변경 */
+    height: auto; /* 높이를 자동으로 조정 */
+    clip-path: none; /* 삼각형 모양 해제 */
+  }
+  .sideMenuHome {
+    text-align: center; /* 중앙 정렬 */
+  }
+  .closeMenuBtn {
+    text-align: right;
+  }
+
+  .sideMenu ul {
+    padding: 10px;
+  }
+
+  .sideMenu ul li {
+    margin: 10px 0; /* 리스트 항목 간 간격 조정 */
+    text-align: center;
+    font-size: 20px;
+  }
+  .card-back {
+    padding: 0;
+  }
+  .card-back h1 {
+    font-size: 22px;
+  }
+  .card-back h3 {
+    font-size: 18px;
+  }
+}
